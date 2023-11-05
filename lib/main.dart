@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:foodrecipe/view_models/list_of_food_view_model.dart';
-import 'package:provider/provider.dart';
+import 'package:foodrecipe/sql/sql_provider.dart';
+import 'pages/home_screen.dart';
 
-import 'first_page.dart';
-
-void main() {
+void main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await FoodProvider.instance.open();
   runApp(const MyApp());
 }
 
@@ -14,11 +14,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<FoodListViewModel>(
-      create: (BuildContext context) => FoodListViewModel(),
-      child: const MaterialApp(
+    return const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: FirstPage()),
-    );
+        home: HomePage());
   }
 }

@@ -28,7 +28,7 @@ create table $tableRecipes (
         });
   }
 
-  Future<List<SQLModel>> getAllContacts() async {
+  Future<List<SQLModel>> getAllRecepies() async {
     List<Map<String , dynamic >> foodmaps = await db.query(tableRecipes);
     if (foodmaps.isEmpty) {
       return [];

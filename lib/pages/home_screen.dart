@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:foodrecipe/sql/favoritepage.dart';
-import 'homepage.dart';
+import 'package:foodrecipe/pages/favorite_screen.dart';
+import 'first_screen.dart';
 
-class FirstPage extends StatefulWidget {
-  const FirstPage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<FirstPage> createState() => _FirstPageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _FirstPageState extends State<FirstPage> {
+class _HomePageState extends State<HomePage> {
 
   int selectedpage = 0;
   List <Widget> pages = [
-    const Home(),
-    Favorite(),
+    const FirstScreen(),
+    const FavoriteScreen(),
   ];
   @override
   Widget build(BuildContext context) {
