@@ -9,7 +9,7 @@ class API2{
     http.Response response = await http.get(Uri.parse(
     "https://api.spoonacular.com/recipes/$id/information?includeNutrition=false&apiKey=1a01d256345648ebad7694423005c1bb&cuisine=egyptian"));
     if (response.statusCode >= 200 && response.statusCode <= 299){
-      final Map<String , dynamic> jsonbody = jsonDecode(response.body).toList();
+      final Map<String , dynamic> jsonbody = jsonDecode(response.body);
       FoodInformation informationlist=FoodInformation.fromjson(jsonbody);
       return informationlist;
     }else{
